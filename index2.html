@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ваш кошик</title>
+  <link rel="stylesheet" href="CSS/style2.css">
+</head>
+<body>
+  <header>
+    <img class="logo" src="img/Frame.png" alt="Логотип">
+    <a href="#"><img class="basket" src="img/Frame (1).png" alt="Кошик"><span class="basket-count">0</span></a>
+  </header>
+
+  <main>
+    <h1>Ваш кошик</h1>
+
+    <a class="www" href="#">Оформити замовлення</a>
+
+    <div class="form">
+      <form id="order-form">
+        <input type="text" placeholder="Введіть назву товару" required> <br>
+        <input type="text" placeholder="Введіть ім'я" required> <br>
+        <input type="tel" placeholder="Введіть номер телефону" required><br>
+        <input type="radio" name="choice" required> Нова Пошта<br>
+        <input type="radio" name="choice" required> Укр Пошта <br>
+        <input type="submit" value="Надіслати">
+      </form>
+      <p id="thank-you-message" style="display: none; color: green;">Дякую за замовлення!</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 Ваш магазин. Всі права захищені.</p>
+  </footer>
+
+  <script>
+    // Обробка відправлення форми
+    const orderForm = document.getElementById('order-form');
+    const thankYouMessage = document.getElementById('thank-you-message');
+
+    orderForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Запобігаємо перезавантаженню сторінки
+      thankYouMessage.style.display = 'block'; // Показуємо повідомлення
+      orderForm.reset(); // Очищаємо форму після відправлення
+    });
+  </script>
+</body>
+</html>
